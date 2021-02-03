@@ -1,7 +1,7 @@
 ﻿
 namespace Calculator
 {
-    partial class Form1
+    partial class Calculator
     {
         /// <summary>
         /// Required designer variable.
@@ -268,7 +268,7 @@ namespace Calculator
             this.textBox2.Size = new System.Drawing.Size(477, 26);
             this.textBox2.TabIndex = 2;
             // 
-            // Form1
+            // Calculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -295,8 +295,8 @@ namespace Calculator
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "Calculator";
+            this.Text = "Calculator";
             this.ResumeLayout(false);
             this.PerformLayout();
 
