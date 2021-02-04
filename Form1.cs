@@ -21,6 +21,7 @@ namespace Calculator
         ArrayList operatorsArrayList = new ArrayList();
         ArrayList numbersArrayList = new ArrayList();
         string lastChar;
+        int numberLessThenZero;
 
         private void button0_Click(object sender, EventArgs e)
         {
@@ -157,110 +158,199 @@ namespace Calculator
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            if (textBox2.Text.Length == 0 && textBox1.Text.Length > 0)
+            if (textBox2.Text.Length == 0) //&& textBox1.Text.Length > 0
             {
-                textBox2.Text = textBox1.Text + " + ";
+                numberLessThenZero = Convert.ToInt32(textBox1.Text);
+                if (numberLessThenZero < 0)
+                {
+                    textBox2.Text = "(" + textBox1.Text + ") + ";
+                }
+                else
+                {
+                    textBox2.Text = textBox1.Text + " + ";
+                }
                 operatorsArrayList.Add("+");
                 numbersArrayList.Add(textBox1.Text);
+                textBox1.Text = null;
             }
             else if (textBox2.Text.Length > 0)
             {
                 lastChar = textBox2.Text.Substring(textBox2.Text.Length - 1);
                 if (lastChar == "=")
                 {
-                    textBox2.Text = textBox2.Text + " " + textBox1.Text + " + ";
-                    operatorsArrayList.Add("+");
-                    numbersArrayList.Add(textBox1.Text);
+                    if (numberLessThenZero < 0)
+                    {
+                        textBox2.Text = textBox2.Text + " (" + textBox1.Text + ") + ";
+                    }
+                    else
+                    {
+                        textBox2.Text = textBox2.Text + " " + textBox1.Text + " + ";
+                    }
                 }
                 else
                 {
-                    textBox2.Text = textBox2.Text + textBox1.Text + " + ";
-                    operatorsArrayList.Add("+");
-                    numbersArrayList.Add(textBox1.Text);
+                    if (numberLessThenZero < 0)
+                    {
+                        textBox2.Text = textBox2.Text + "(" + textBox1.Text + ") + ";
+                    }
+                    else
+                    {
+                        textBox2.Text = textBox2.Text + textBox1.Text + " + ";
+                    }
                 }
+                operatorsArrayList.Add("+");
+                numbersArrayList.Add(textBox1.Text);
+                textBox1.Text = null;
             }
-            textBox1.Text = null;
         }
 
         private void buttonSubstract_Click(object sender, EventArgs e)
         {
-            if (textBox2.Text.Length == 0 && textBox1.Text.Length > 0)
+            if (textBox1.Text.Length == 0)
             {
-                textBox2.Text = textBox1.Text + " - ";
+                textBox1.Text = "-";
+            }
+            else if (textBox2.Text.Length == 0) //&& textBox1.Text.Length > 0
+            {
+                numberLessThenZero = Convert.ToInt32(textBox1.Text);
+                if (numberLessThenZero < 0)
+                {
+                    textBox2.Text = "(" + textBox1.Text + ") - ";
+                }
+                else
+                {
+                    textBox2.Text = textBox1.Text + " - ";
+                }
                 operatorsArrayList.Add("-");
                 numbersArrayList.Add(textBox1.Text);
+                textBox1.Text = null;
             }
             else if (textBox2.Text.Length > 0)
             {
                 lastChar = textBox2.Text.Substring(textBox2.Text.Length - 1);
                 if (lastChar == "=")
                 {
-                    textBox2.Text = textBox2.Text + " " + textBox1.Text + " - ";
-                    operatorsArrayList.Add("-");
-                    numbersArrayList.Add(textBox1.Text);
+                    if (numberLessThenZero < 0)
+                    {
+                        textBox2.Text = textBox2.Text + " (" + textBox1.Text + ") - ";
+                    }
+                    else
+                    {
+                        textBox2.Text = textBox2.Text + " " + textBox1.Text + " - ";
+                    }
                 }
                 else
                 {
-                    textBox2.Text = textBox2.Text + textBox1.Text + " - ";
-                    operatorsArrayList.Add("-");
-                    numbersArrayList.Add(textBox1.Text);
+                    if (numberLessThenZero < 0)
+                    {
+                        textBox2.Text = textBox2.Text + "(" + textBox1.Text + ") - ";
+                    }
+                    else
+                    {
+                        textBox2.Text = textBox2.Text + textBox1.Text + " - ";
+                    }
                 }
+                operatorsArrayList.Add("-");
+                numbersArrayList.Add(textBox1.Text);
+                textBox1.Text = null;
             }
-            textBox1.Text = null;
         }
 
         private void buttonMultiply_Click(object sender, EventArgs e)
         {
-            if (textBox2.Text.Length == 0 && textBox1.Text.Length > 0)
+
+            if (textBox2.Text.Length == 0) //&& textBox1.Text.Length > 0
             {
-                textBox2.Text = textBox1.Text + " * ";
+                numberLessThenZero = Convert.ToInt32(textBox1.Text);
+                if (numberLessThenZero < 0)
+                {
+                    textBox2.Text = "(" + textBox1.Text + ") * ";
+                }
+                else
+                {
+                    textBox2.Text = textBox1.Text + " * ";
+                }
                 operatorsArrayList.Add("*");
                 numbersArrayList.Add(textBox1.Text);
+                textBox1.Text = null;
             }
             else if (textBox2.Text.Length > 0)
             {
                 lastChar = textBox2.Text.Substring(textBox2.Text.Length - 1);
                 if (lastChar == "=")
                 {
-                    textBox2.Text = textBox2.Text + " " + textBox1.Text + " * ";
-                    operatorsArrayList.Add("*");
-                    numbersArrayList.Add(textBox1.Text);
+                    if (numberLessThenZero < 0)
+                    {
+                        textBox2.Text = textBox2.Text + " (" + textBox1.Text + ") * ";
+                    }
+                    else
+                    {
+                        textBox2.Text = textBox2.Text + " " + textBox1.Text + " * ";
+                    }
                 }
                 else
                 {
-                    textBox2.Text = textBox2.Text + textBox1.Text + " * ";
-                    operatorsArrayList.Add("*");
-                    numbersArrayList.Add(textBox1.Text);
+                    if (numberLessThenZero < 0)
+                    {
+                        textBox2.Text = textBox2.Text + "(" + textBox1.Text + ") * ";
+                    }
+                    else
+                    {
+                        textBox2.Text = textBox2.Text + textBox1.Text + " * ";
+                    }
                 }
+                operatorsArrayList.Add("*");
+                numbersArrayList.Add(textBox1.Text);
+                textBox1.Text = null;
             }
-            textBox1.Text = null;
         }
 
         private void buttonDivide_Click(object sender, EventArgs e)
         {
-            if (textBox2.Text.Length == 0 && textBox1.Text.Length > 0)
+            if (textBox2.Text.Length == 0) //&& textBox1.Text.Length > 0
             {
-                textBox2.Text = textBox1.Text + " / ";
+                numberLessThenZero = Convert.ToInt32(textBox1.Text);
+                if (numberLessThenZero < 0)
+                {
+                    textBox2.Text = "(" + textBox1.Text + ") / ";
+                }
+                else
+                {
+                    textBox2.Text = textBox1.Text + " / ";
+                }
                 operatorsArrayList.Add("/");
                 numbersArrayList.Add(textBox1.Text);
+                textBox1.Text = null;
             }
             else if (textBox2.Text.Length > 0)
             {
                 lastChar = textBox2.Text.Substring(textBox2.Text.Length - 1);
                 if (lastChar == "=")
                 {
-                    textBox2.Text = textBox2.Text + " " + textBox1.Text + " / ";
-                    operatorsArrayList.Add("/");
-                    numbersArrayList.Add(textBox1.Text);
+                    if (numberLessThenZero < 0)
+                    {
+                        textBox2.Text = textBox2.Text + " (" + textBox1.Text + ") / ";
+                    }
+                    else
+                    {
+                        textBox2.Text = textBox2.Text + " " + textBox1.Text + " / ";
+                    }
                 }
                 else
                 {
-                    textBox2.Text = textBox2.Text + textBox1.Text + " / ";
-                    operatorsArrayList.Add("/");
-                    numbersArrayList.Add(textBox1.Text);
+                    if (numberLessThenZero < 0)
+                    {
+                        textBox2.Text = textBox2.Text + "(" + textBox1.Text + ") / ";
+                    }
+                    else
+                    {
+                        textBox2.Text = textBox2.Text + textBox1.Text + " / ";
+                    }
                 }
+                operatorsArrayList.Add("/");
+                numbersArrayList.Add(textBox1.Text);
+                textBox1.Text = null;
             }
-            textBox1.Text = null;
         }
 
         private void buttonBackSpace_Click(object sender, EventArgs e)
