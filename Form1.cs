@@ -21,7 +21,8 @@ namespace Calculator
         ArrayList operatorsArrayList = new ArrayList();
         ArrayList numbersArrayList = new ArrayList();
         string lastChar;
-        int numberLessThenZero;
+        decimal numberLessThenZero, numberReplace;
+        int operatorsArrayListLenght;
 
         private void button0_Click(object sender, EventArgs e)
         {
@@ -150,7 +151,7 @@ namespace Calculator
                 lastChar = textBox1.Text.Substring(textBox1.Text.Length - 1);
             }
 
-            if ((textBox1.Text.Length > 0) && (lastChar != ",") && (lastChar != "+") && (lastChar != "-") && (lastChar != "*") && (lastChar != "/"))
+            if (textBox1.Text.Length > 0 && lastChar != "," && lastChar != "-" && !(textBox1.Text.Contains(",")))
             {
                 textBox1.Text = textBox1.Text + ",";
             }
@@ -158,9 +159,9 @@ namespace Calculator
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            if (textBox2.Text.Length == 0) //&& textBox1.Text.Length > 0
+            if (textBox2.Text.Length == 0 && textBox1.Text.Length > 0 && textBox1.Text != "-")
             {
-                numberLessThenZero = Convert.ToInt32(textBox1.Text);
+                numberLessThenZero = Convert.ToDecimal(textBox1.Text);
                 if (numberLessThenZero < 0)
                 {
                     textBox2.Text = "(" + textBox1.Text + ") + ";
@@ -173,8 +174,10 @@ namespace Calculator
                 numbersArrayList.Add(textBox1.Text);
                 textBox1.Text = null;
             }
-            else if (textBox2.Text.Length > 0)
+            else if (textBox2.Text.Length > 0 && textBox1.Text.Length > 0 && textBox1.Text != "-")
             {
+                textBox2.SelectionStart = textBox2.Text.Length - 1;
+                numberLessThenZero = Convert.ToDecimal(textBox1.Text);
                 lastChar = textBox2.Text.Substring(textBox2.Text.Length - 1);
                 if (lastChar == "=")
                 {
@@ -201,6 +204,7 @@ namespace Calculator
                 operatorsArrayList.Add("+");
                 numbersArrayList.Add(textBox1.Text);
                 textBox1.Text = null;
+                textBox2.SelectionStart = textBox2.Text.Length - 1;
             }
         }
 
@@ -210,9 +214,9 @@ namespace Calculator
             {
                 textBox1.Text = "-";
             }
-            else if (textBox2.Text.Length == 0) //&& textBox1.Text.Length > 0
+            else if (textBox2.Text.Length == 0 && textBox1.Text.Length > 0 && textBox1.Text != "-")
             {
-                numberLessThenZero = Convert.ToInt32(textBox1.Text);
+                numberLessThenZero = Convert.ToDecimal(textBox1.Text);
                 if (numberLessThenZero < 0)
                 {
                     textBox2.Text = "(" + textBox1.Text + ") - ";
@@ -225,8 +229,10 @@ namespace Calculator
                 numbersArrayList.Add(textBox1.Text);
                 textBox1.Text = null;
             }
-            else if (textBox2.Text.Length > 0)
+            else if (textBox2.Text.Length > 0 && textBox1.Text.Length > 0 && textBox1.Text != "-")
             {
+                textBox2.SelectionStart = textBox2.Text.Length - 1;
+                numberLessThenZero = Convert.ToDecimal(textBox1.Text);
                 lastChar = textBox2.Text.Substring(textBox2.Text.Length - 1);
                 if (lastChar == "=")
                 {
@@ -253,15 +259,15 @@ namespace Calculator
                 operatorsArrayList.Add("-");
                 numbersArrayList.Add(textBox1.Text);
                 textBox1.Text = null;
+                textBox2.SelectionStart = textBox2.Text.Length - 1;
             }
         }
 
         private void buttonMultiply_Click(object sender, EventArgs e)
         {
-
-            if (textBox2.Text.Length == 0) //&& textBox1.Text.Length > 0
+            if (textBox2.Text.Length == 0 && textBox1.Text.Length > 0 && textBox1.Text != "-")
             {
-                numberLessThenZero = Convert.ToInt32(textBox1.Text);
+                numberLessThenZero = Convert.ToDecimal(textBox1.Text);
                 if (numberLessThenZero < 0)
                 {
                     textBox2.Text = "(" + textBox1.Text + ") * ";
@@ -273,9 +279,12 @@ namespace Calculator
                 operatorsArrayList.Add("*");
                 numbersArrayList.Add(textBox1.Text);
                 textBox1.Text = null;
+                textBox2.SelectionStart = textBox2.Text.Length - 1;
             }
-            else if (textBox2.Text.Length > 0)
+            else if (textBox2.Text.Length > 0 && textBox1.Text.Length > 0 && textBox1.Text != "-")
             {
+                textBox2.SelectionStart = textBox2.Text.Length - 1;
+                numberLessThenZero = Convert.ToDecimal(textBox1.Text);
                 lastChar = textBox2.Text.Substring(textBox2.Text.Length - 1);
                 if (lastChar == "=")
                 {
@@ -302,14 +311,15 @@ namespace Calculator
                 operatorsArrayList.Add("*");
                 numbersArrayList.Add(textBox1.Text);
                 textBox1.Text = null;
+                textBox2.SelectionStart = textBox2.Text.Length - 1;
             }
         }
 
         private void buttonDivide_Click(object sender, EventArgs e)
         {
-            if (textBox2.Text.Length == 0) //&& textBox1.Text.Length > 0
+            if (textBox2.Text.Length == 0 && textBox1.Text.Length > 0 && textBox1.Text != "-")
             {
-                numberLessThenZero = Convert.ToInt32(textBox1.Text);
+                numberLessThenZero = Convert.ToDecimal(textBox1.Text);
                 if (numberLessThenZero < 0)
                 {
                     textBox2.Text = "(" + textBox1.Text + ") / ";
@@ -322,8 +332,10 @@ namespace Calculator
                 numbersArrayList.Add(textBox1.Text);
                 textBox1.Text = null;
             }
-            else if (textBox2.Text.Length > 0)
+            else if (textBox2.Text.Length > 0 && textBox1.Text.Length > 0 && textBox1.Text != "-")
             {
+                textBox2.SelectionStart = textBox2.Text.Length - 1;
+                numberLessThenZero = Convert.ToDecimal(textBox1.Text);
                 lastChar = textBox2.Text.Substring(textBox2.Text.Length - 1);
                 if (lastChar == "=")
                 {
@@ -350,6 +362,7 @@ namespace Calculator
                 operatorsArrayList.Add("/");
                 numbersArrayList.Add(textBox1.Text);
                 textBox1.Text = null;
+                textBox2.SelectionStart = textBox2.Text.Length - 1;
             }
         }
 
@@ -363,6 +376,7 @@ namespace Calculator
             {
                 textBox1.Text = textBox1.Text.Remove(textBox1.Text.Length - 1);
             }
+            textBox2.SelectionStart = textBox2.Text.Length - 1;
         }
 
         private void buttonDel_Click(object sender, EventArgs e)
@@ -379,95 +393,122 @@ namespace Calculator
             {
                 lastChar = textBox2.Text.Substring(textBox2.Text.Length - 1);
             }
-            if (textBox1.Text.Length > 0 && lastChar != "=")
+            if (textBox1.Text.Length > 0 && lastChar != "=" && textBox1.Text != "-")
             {
+                numberLessThenZero = Convert.ToDecimal(textBox1.Text);
+                if (numberLessThenZero < 0)
+                {
+                    textBox2.Text = textBox2.Text + "(" + textBox1.Text + ") =";
+                }
+                else
+                {
+                    textBox2.Text = textBox2.Text + textBox1.Text + " =";
+                }
                 numbersArrayList.Add(textBox1.Text);
-                textBox2.Text = textBox2.Text + textBox1.Text + " =";
                 textBox1.Text = null;
             }
-            if (textBox1.Text.Length == 0)
+
+            operatorsArrayListLenght = operatorsArrayList.Count;
+
+            while (operatorsArrayListLenght > 0)
             {
-                int operatorsArrayListLenght = operatorsArrayList.Count;
-                decimal numberReplace;
-                textBox1.Text = null;
-                while (operatorsArrayListLenght > 0)
+                while (operatorsArrayList.Contains("*") || operatorsArrayList.Contains("/"))
                 {
-                    while (operatorsArrayList.Contains("*") || operatorsArrayList.Contains("/"))
+                    for (int i = 0; i < operatorsArrayListLenght; i++)
                     {
-                        for (int i = 0; i < operatorsArrayListLenght; i++)
+                        numberReplace = 0;
+                        if ((operatorsArrayList[i].ToString() == "*") || (operatorsArrayList[i].ToString() == "/"))
                         {
-                            numberReplace = 0;
-                            if ((operatorsArrayList[i].ToString() == "*") || (operatorsArrayList[i].ToString() == "/"))
+
+                            //MessageBox.Show($"Numar {i}: " + numbersArrayList[i].ToString());
+                            //MessageBox.Show($"Operator {i}: " + operatorsArrayList[i].ToString());
+                            //MessageBox.Show($"Numar {i + 1}: " + numbersArrayList[i + 1].ToString());
+
+                            if (operatorsArrayList[i].ToString() == "*")
                             {
-                                if (operatorsArrayList[i].ToString() == "*")
+                                numberReplace = (Convert.ToDecimal(numbersArrayList[i]) * Convert.ToDecimal(numbersArrayList[i + 1]));
+                            }
+                            if (operatorsArrayList[i].ToString() == "/")
+                            {
+                                if (Convert.ToDecimal(numbersArrayList[i + 1]) == 0)
                                 {
-                                    numberReplace = (Convert.ToDecimal(numbersArrayList[i]) * Convert.ToDecimal(numbersArrayList[i + 1]));
+                                    textBox2.Text = "You cannot divide a number by zero! ";
+                                    textBox1.Text = "";
                                 }
-                                if (operatorsArrayList[i].ToString() == "/")
+                                else
                                 {
                                     numberReplace = (Convert.ToDecimal(numbersArrayList[i]) / Convert.ToDecimal(numbersArrayList[i + 1]));
                                 }
+                            }
 
-                                //MessageBox.Show($"Numar {i}: " + numbersArrayList[i].ToString());
-                                //MessageBox.Show($"Operator {i}: " + operatorsArrayList[i].ToString());
-                                //MessageBox.Show($"Numar {i}: " + numbersArrayList[i + 1].ToString());
+                            operatorsArrayList.RemoveAt(i);
+                            numbersArrayList.RemoveAt(i);
+                            numbersArrayList.RemoveAt(i);
+                            numbersArrayList.Insert(i, numberReplace);
+                            operatorsArrayListLenght -= 1;
+                            i -= 1;
 
-                                operatorsArrayList.RemoveAt(i);
-                                numbersArrayList.RemoveAt(i);
-                                numbersArrayList.RemoveAt(i);
-                                numbersArrayList.Insert(i, numberReplace);
-                                operatorsArrayListLenght = operatorsArrayListLenght - 1;
-                                if (numberReplace == 0)
-                                {
-                                    textBox1.Text = "0";
-                                }
-                                else
-                                {
-                                    textBox1.Text = numberReplace.ToString("#.##");
-                                }
+                            if (numberReplace > -1 && numberReplace < 1)
+                            {
+                                textBox1.Text = "0" + numberReplace.ToString("#.##"); ;
+                            }
+                            else if (numberReplace == 0)
+                            {
+                                textBox1.Text = "0";
+                            }
+                            else
+                            {
+                                textBox1.Text = numberReplace.ToString("#.##");
                             }
                         }
                     }
+                }
 
-                    while (operatorsArrayList.Contains("+") || operatorsArrayList.Contains("-"))
+                while (operatorsArrayList.Contains("+") || operatorsArrayList.Contains("-"))
+                {
+                    for (int i = 0; i < operatorsArrayListLenght; i++)
                     {
-                        for (int i = 0; i < operatorsArrayListLenght; i++)
+                        numberReplace = 0;
+
+                        //MessageBox.Show($"Numar {i}: " + numbersArrayList[i].ToString());
+                        //MessageBox.Show($"Operator {i}: " + operatorsArrayList[i].ToString());
+                        //MessageBox.Show($"Numar {i + 1}: " + numbersArrayList[i + 1].ToString());
+
+                        if ((operatorsArrayList[i].ToString() == "+") || (operatorsArrayList[i].ToString() == "-"))
                         {
-                            i = 0;
-                            numberReplace = 0;
-                            if ((operatorsArrayList[i].ToString() == "+") || (operatorsArrayList[i].ToString() == "-"))
+                            if (operatorsArrayList[i].ToString() == "+")
                             {
-                                if (operatorsArrayList[i].ToString() == "+")
-                                {
-                                    numberReplace = (Convert.ToDecimal(numbersArrayList[i]) + Convert.ToDecimal(numbersArrayList[i + 1]));
-                                }
-                                if (operatorsArrayList[i].ToString() == "-")
-                                {
-                                    numberReplace = (Convert.ToDecimal(numbersArrayList[i]) - Convert.ToDecimal(numbersArrayList[i + 1]));
-                                }
+                                numberReplace = (Convert.ToDecimal(numbersArrayList[i]) + Convert.ToDecimal(numbersArrayList[i + 1]));
+                            }
+                            if (operatorsArrayList[i].ToString() == "-")
+                            {
+                                numberReplace = (Convert.ToDecimal(numbersArrayList[i]) - Convert.ToDecimal(numbersArrayList[i + 1]));
+                            }
 
-                                //MessageBox.Show($"Numar {i}: " + numbersArrayList[i].ToString());
-                                //MessageBox.Show($"Operator {i}: " + operatorsArrayList[i].ToString());
-                                //MessageBox.Show($"Numar {i + 1}: " + numbersArrayList[i + 1].ToString());
+                            operatorsArrayList.RemoveAt(i);
+                            numbersArrayList.RemoveAt(i);
+                            numbersArrayList.RemoveAt(i);
+                            numbersArrayList.Insert(i, numberReplace);
+                            operatorsArrayListLenght -= 1;
+                            i -= 1;
 
-                                operatorsArrayList.RemoveAt(i);
-                                numbersArrayList.RemoveAt(i);
-                                numbersArrayList.RemoveAt(i);
-                                numbersArrayList.Insert(i, numberReplace);
-                                operatorsArrayListLenght = operatorsArrayListLenght - 1;
-                                if (numberReplace == 0)
-                                {
-                                    textBox1.Text = "0";
-                                }
-                                else
-                                {
-                                    textBox1.Text = numberReplace.ToString("#.##");
-                                }
+                            if (numberReplace > -1 && numberReplace < 1)
+                            {
+                                textBox1.Text = "0" + numberReplace.ToString("#.##"); ;
+                            }
+                            else if (numberReplace == 0)
+                            {
+                                textBox1.Text = "0";
+                            }
+                            else
+                            {
+                                textBox1.Text = numberReplace.ToString("#.##");
                             }
                         }
                     }
                 }
             }
+
             operatorsArrayList.Clear();
             numbersArrayList.Clear();
         }

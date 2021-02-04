@@ -55,7 +55,7 @@ namespace Calculator
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(152, 146);
+            this.button7.Location = new System.Drawing.Point(12, 95);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(55, 55);
             this.button7.TabIndex = 0;
@@ -65,7 +65,7 @@ namespace Calculator
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(204, 146);
+            this.button8.Location = new System.Drawing.Point(66, 95);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(55, 55);
             this.button8.TabIndex = 0;
@@ -75,7 +75,7 @@ namespace Calculator
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(256, 146);
+            this.button9.Location = new System.Drawing.Point(120, 95);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(55, 55);
             this.button9.TabIndex = 0;
@@ -85,7 +85,7 @@ namespace Calculator
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(152, 198);
+            this.button4.Location = new System.Drawing.Point(12, 149);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(55, 55);
             this.button4.TabIndex = 0;
@@ -95,7 +95,7 @@ namespace Calculator
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(204, 198);
+            this.button5.Location = new System.Drawing.Point(66, 149);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(55, 55);
             this.button5.TabIndex = 0;
@@ -105,7 +105,7 @@ namespace Calculator
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(256, 198);
+            this.button6.Location = new System.Drawing.Point(120, 149);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(55, 55);
             this.button6.TabIndex = 0;
@@ -115,7 +115,7 @@ namespace Calculator
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(152, 250);
+            this.button1.Location = new System.Drawing.Point(12, 203);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(55, 55);
             this.button1.TabIndex = 0;
@@ -125,7 +125,7 @@ namespace Calculator
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(204, 250);
+            this.button2.Location = new System.Drawing.Point(66, 203);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(55, 55);
             this.button2.TabIndex = 0;
@@ -135,7 +135,7 @@ namespace Calculator
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(256, 250);
+            this.button3.Location = new System.Drawing.Point(120, 203);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(55, 55);
             this.button3.TabIndex = 0;
@@ -145,7 +145,7 @@ namespace Calculator
             // 
             // button10
             // 
-            this.button10.Location = new System.Drawing.Point(152, 302);
+            this.button10.Location = new System.Drawing.Point(12, 257);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(55, 55);
             this.button10.TabIndex = 0;
@@ -154,7 +154,7 @@ namespace Calculator
             // 
             // button0
             // 
-            this.button0.Location = new System.Drawing.Point(204, 302);
+            this.button0.Location = new System.Drawing.Point(66, 257);
             this.button0.Name = "button0";
             this.button0.Size = new System.Drawing.Size(55, 55);
             this.button0.TabIndex = 0;
@@ -164,7 +164,7 @@ namespace Calculator
             // 
             // buttonDecimal
             // 
-            this.buttonDecimal.Location = new System.Drawing.Point(256, 302);
+            this.buttonDecimal.Location = new System.Drawing.Point(120, 257);
             this.buttonDecimal.Name = "buttonDecimal";
             this.buttonDecimal.Size = new System.Drawing.Size(55, 55);
             this.buttonDecimal.TabIndex = 0;
@@ -174,7 +174,7 @@ namespace Calculator
             // 
             // buttonEqual
             // 
-            this.buttonEqual.Location = new System.Drawing.Point(308, 302);
+            this.buttonEqual.Location = new System.Drawing.Point(174, 257);
             this.buttonEqual.Name = "buttonEqual";
             this.buttonEqual.Size = new System.Drawing.Size(55, 55);
             this.buttonEqual.TabIndex = 0;
@@ -184,7 +184,7 @@ namespace Calculator
             // 
             // buttonAdd
             // 
-            this.buttonAdd.Location = new System.Drawing.Point(308, 250);
+            this.buttonAdd.Location = new System.Drawing.Point(174, 203);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(55, 55);
             this.buttonAdd.TabIndex = 0;
@@ -194,7 +194,7 @@ namespace Calculator
             // 
             // buttonSubstract
             // 
-            this.buttonSubstract.Location = new System.Drawing.Point(308, 198);
+            this.buttonSubstract.Location = new System.Drawing.Point(174, 149);
             this.buttonSubstract.Name = "buttonSubstract";
             this.buttonSubstract.Size = new System.Drawing.Size(55, 55);
             this.buttonSubstract.TabIndex = 0;
@@ -204,7 +204,7 @@ namespace Calculator
             // 
             // buttonMultiply
             // 
-            this.buttonMultiply.Location = new System.Drawing.Point(308, 146);
+            this.buttonMultiply.Location = new System.Drawing.Point(174, 95);
             this.buttonMultiply.Name = "buttonMultiply";
             this.buttonMultiply.Size = new System.Drawing.Size(55, 55);
             this.buttonMultiply.TabIndex = 0;
@@ -214,16 +214,16 @@ namespace Calculator
             // 
             // textBox1
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(12, 44);
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(235, 41);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(477, 44);
+            this.textBox1.Size = new System.Drawing.Size(162, 38);
             this.textBox1.TabIndex = 1;
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // buttonDivide
             // 
-            this.buttonDivide.Location = new System.Drawing.Point(308, 94);
+            this.buttonDivide.Location = new System.Drawing.Point(174, 41);
             this.buttonDivide.Name = "buttonDivide";
             this.buttonDivide.Size = new System.Drawing.Size(55, 55);
             this.buttonDivide.TabIndex = 0;
@@ -233,7 +233,7 @@ namespace Calculator
             // 
             // buttonBackSpace
             // 
-            this.buttonBackSpace.Location = new System.Drawing.Point(256, 94);
+            this.buttonBackSpace.Location = new System.Drawing.Point(120, 41);
             this.buttonBackSpace.Name = "buttonBackSpace";
             this.buttonBackSpace.Size = new System.Drawing.Size(55, 55);
             this.buttonBackSpace.TabIndex = 0;
@@ -243,7 +243,7 @@ namespace Calculator
             // 
             // buttonDel
             // 
-            this.buttonDel.Location = new System.Drawing.Point(204, 94);
+            this.buttonDel.Location = new System.Drawing.Point(66, 41);
             this.buttonDel.Name = "buttonDel";
             this.buttonDel.Size = new System.Drawing.Size(55, 55);
             this.buttonDel.TabIndex = 0;
@@ -253,7 +253,7 @@ namespace Calculator
             // 
             // button20
             // 
-            this.button20.Location = new System.Drawing.Point(152, 94);
+            this.button20.Location = new System.Drawing.Point(12, 41);
             this.button20.Name = "button20";
             this.button20.Size = new System.Drawing.Size(55, 55);
             this.button20.TabIndex = 0;
@@ -262,17 +262,18 @@ namespace Calculator
             // 
             // textBox2
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.Location = new System.Drawing.Point(12, 12);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(477, 26);
+            this.textBox2.Size = new System.Drawing.Size(385, 23);
             this.textBox2.TabIndex = 2;
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // Calculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(498, 371);
+            this.ClientSize = new System.Drawing.Size(408, 319);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button3);
