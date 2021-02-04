@@ -376,7 +376,6 @@ namespace Calculator
             {
                 textBox1.Text = textBox1.Text.Remove(textBox1.Text.Length - 1);
             }
-            textBox2.SelectionStart = textBox2.Text.Length - 1;
         }
 
         private void buttonDel_Click(object sender, EventArgs e)
